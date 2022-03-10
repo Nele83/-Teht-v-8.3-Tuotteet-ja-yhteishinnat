@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tämä_8._3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            Console.WriteLine("Tehtävä 8.3");
+            Console.WriteLine();
+            Console.WriteLine("-----------------");
+            Console.WriteLine();
+            Console.Write("Kuinka monta tuotetta lisätään? ");
+            int luku = int.Parse(Console.ReadLine());
+            string[] nimet = new string[luku];
+            double[] hinta = new double[luku];
+            int[] maara = new int[luku];
+            int T;           
+
+            for (int i = 0; i < luku; i++)
+            {
+                T = i + 1;// T on kayttäjän mukavuuden kannalta käytettävä arvo
+                Console.Write("Anna " + T + ". tuotteen nimi ? ");
+                nimet[i] = Console.ReadLine();
+                Console.Write("Anna " + T + ". tuotteen hinta ? ");
+                hinta[i] = double.Parse(Console.ReadLine());
+                Console.Write("Anna " + T + ". tuotteiden maara ? ");
+                maara[i] = int.Parse(Console.ReadLine());                                                                                                           
+            }
+            for (int i = 0; i < luku; i++)// Varastoidut arvot tulostetaan ruudulle
+            {
+                Console.WriteLine(nimet[i] + ": "+ maara[i] * hinta[i] + " euroa");
+            }
+        }
+    }
+}
